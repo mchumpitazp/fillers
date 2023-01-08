@@ -1,6 +1,8 @@
 import React from 'react';
 
 // Components
+import Header from './HeaderComponent';
+import Products from './ProductsComponent';
 
 // Redux
 
@@ -13,9 +15,9 @@ class Main extends React.Component {
     componentDidMount() {}
 
     render() {
-        return {
-            
-        }
+        return(
+            <Header />
+        );
     }
 }
 
