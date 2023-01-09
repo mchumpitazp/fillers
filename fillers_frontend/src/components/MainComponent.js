@@ -16,7 +16,10 @@ class Main extends React.Component {
 
     render() {
         return(
-            <Header />
+            <React.Fragment>
+                <Header />
+                <Products />
+            </React.Fragment>
         );
     }
 }

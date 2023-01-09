@@ -1,0 +1,63 @@
+$light-gray: #f8f8f8;
+
+// Font Sizes
+h1 { font-size: 4.5rem; }
+h2 { font-size: 4rem; }
+h3 { font-size: 3.25rem;}
+h4 { font-size: 2rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+.navbar {
+    
+    .navbar-brand {
+        #brand {
+            font-size: 2.5rem;
+            font-weight: 600;
+
+            #plus {
+                font-size: 1.5rem;
+                font-weight: bold;
+                position: absolute;
+            }
+        }
+    }
+
+    .nav-link {
+        font-weight: 500;
+    }
+
+    .btn > span {
+        display: flex;
+        font-weight: 700;
+        font-size: 0.75rem;
+        margin: 0.6rem 1.6rem;
+    }
+}
+
+#navbar-btn-dark {
+    display: flex;
+    font-weight: bold;
+    font-size: 0.75rem;
+}
+
+#products-page {
+    background-color: $light-gray;
+
+    #products-container {
+        padding: 7rem 0;
+
+        .product-subtitle {
+
+            span {
+                font-size: 1rem;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+#x {
+    font-size: 12px;
+
+}
