@@ -5,28 +5,61 @@ function Products() {
     return(
 
         <section id='products-page'>
-            <Container id='products-container'>
+            <Container>
                 <h1>Our <strong>Products.</strong></h1>
 
-                <Row>
-                    <Col md>
+                <Row className='product-container'>
+                    <Col md className='p-0'>
                         IMG
                     </Col>
                     <Col md>
-                        <h2><strong>HA Shine</strong></h2>
-                        
-                        <h4 className='product-subtitle'>
-                            <span className='me-5'>WHAT IS IT</span>
-                            It is a long establishe distracted by the readable
-                        </h4>
+                        <article className='product-info'>
+                            <h5>FILLER</h5>
+                            <hr/>
+                            <h2><strong>HA Shine</strong></h2>
+                            
+                            <h4 className='product-subtitle'>
+                                <span>WHAT IS IT</span>
+                                It is a long establishe distracted by the readable
+                            </h4>
+
+                            <div>
+                                <p>Description</p>
+                                <hr/>
+                                <p>Description</p>
+                                <hr/>
+                                <p>Description</p>
+                                <hr/>
+                            </div>
+                        </article>
                     </Col>
                 </Row>
 
-                <Row>
-                    <Col md>
-                        <h2><strong>HA Shape</strong></h2>
+
+
+                <Row className='product-container'>
+                <Col md>
+                        <article className='product-info'>
+                            <h5>FILLER</h5>
+                            <hr/>
+                            <h2><strong>HA Shine</strong></h2>
+                            
+                            <h4 className='product-subtitle'>
+                                <span>WHAT IS IT</span>
+                                It is a long establishe distracted by the readable
+                            </h4>
+
+                            <div>
+                                <p>Description</p>
+                                <hr/>
+                                <p>Description</p>
+                                <hr/>
+                                <p>Description</p>
+                                <hr/>
+                            </div>
+                        </article>
                     </Col>
-                    <Col md>
+                    <Col md className='p-0'>
                         IMG
                     </Col>
                 </Row>

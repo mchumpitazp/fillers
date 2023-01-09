@@ -7,6 +7,7 @@ h3 { font-size: 3.25rem;}
 h4 { font-size: 2rem; }
 h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
+p  { font-size: 0.75rem;}
 
 .navbar {
     
@@ -43,21 +44,35 @@ h6 { font-size: 1rem; }
 
 #products-page {
     background-color: $light-gray;
+    padding: 11rem 0rem 6.5rem 0rem;
+    
+    .product-container {
+        padding: 6rem 0rem;
 
-    #products-container {
-        padding: 7rem 0;
-
-        .product-subtitle {
-
-            span {
-                font-size: 1rem;
-                vertical-align: middle;
+        .product-info{
+            margin: 0 3.7rem;
+    
+            hr {
+                opacity: 1;
+                margin: 0;
+                margin: 0 -3.75rem;
+            }
+    
+            h2 { margin: 1.8rem 0; }
+    
+            .product-subtitle {
+                margin-bottom: 3.6rem;
+                span {
+                    font-size: 1rem;
+                    vertical-align: middle;
+                    margin-right: 4.2rem;
+                }
+            }
+    
+            p {
+                font-weight: 500; 
+                margin: 1rem 0rem;
             }
         }
     }
-}
-
-#x {
-    font-size: 12px;
-
 }
