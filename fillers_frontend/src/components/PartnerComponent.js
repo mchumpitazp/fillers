@@ -7,7 +7,7 @@ function Partner() {
         <Container id='partner-page'>
             <h1 className='mb-5'>Partner <strong>with Us.</strong></h1>
 
-            {/* <Row>
+             {/* <Row>
                 <Col md className='col-md-5'>
                     <h6>HOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLAHOLA</h6>
                 </Col>
