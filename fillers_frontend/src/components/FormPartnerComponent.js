@@ -12,26 +12,54 @@ function FormPartner() {
                     <h4>Become <strong>a partner</strong></h4>
                     
                     <Col md id='form-info'>
-                        <h6>Hola hola hola hola ola hola hola hola ola hola hola hola ola hola hola hola </h6>
-                        <h6>Holaaa !!!</h6>
+                        <p>Our team will reach you as soon as possible so all your questions/topics/recommendations will be replied. We are excited to receive your info. (e.g.)</p>
+                        <p>Fillers team gives you a warm welcome.</p>
                     </Col>
 
                     <Col md id='form-form'>
                         <Form>
                             <Row>
+                                <Label for='firstname'>Name</Label>
                                 <Col md>
-                                    <FormGroup>
-                                        <Label for='firstname'>Name</Label>
+                                    <FormGroup className='mb-0'>
                                         <Input id='firstname' type='text'/>
+                                        <span className='tiny'>Firstname</span>
                                     </FormGroup>
                                 </Col>
                                 <Col md>
                                     <FormGroup>
-                                        <Label for='lastname'>Last</Label>
                                         <Input id='lastname' type='text'/>
+                                        <span className='tiny'>Lastname</span>
                                     </FormGroup>
                                 </Col>
                             </Row>
+                            
+                            <FormGroup tag='fieldset'>
+                                <legend className='form-label'>
+                                    Interested in:
+                                </legend>
+                                <Row>
+                                    <Col md>
+                                        <FormGroup check>
+                                            <Input name="radio1" type='radio'/>
+                                            {' '}
+                                            <Label check>Our Company</Label>
+                                        </FormGroup>
+                                    </Col>
+                                    <Col md>
+                                        <FormGroup check>
+                                            <Input name="radio1" type='radio'/>
+                                            {' '}
+                                            <Label check>Our Products</Label>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                                <FormGroup check>
+                                    <Input name="radio1" type='radio'/>
+                                    {' '}
+                                    <Label check>Other</Label>
+                                </FormGroup>
+                            </FormGroup>
 
                             <FormGroup>
                                 <Label for="email">

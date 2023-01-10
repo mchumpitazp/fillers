@@ -23,7 +23,7 @@ class Main extends React.Component {
             <React.Fragment>
                 <Header />
                 <Routes>
-                    <Route index element={<Products />} />
+                    <Route index element={<Partner />} />
                     <Route exact path='/partnership' element={<Partner />} />
                     <Route exact path='/products' element={<Products />} />
                     <Route exact path='/aboutus' element={<About />} />
