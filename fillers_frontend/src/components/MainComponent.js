@@ -3,6 +3,7 @@ import React from 'react';
 // Components
 import Header from './HeaderComponent';
 import Products from './ProductsComponent';
+import FormPartner from './FormPartnerComponent';
 
 // Redux
 
@@ -19,6 +20,7 @@ class Main extends React.Component {
             <React.Fragment>
                 <Header />
                 <Products />
+                <FormPartner />
             </React.Fragment>
         );
     }

@@ -28,7 +28,7 @@ p  { font-size: 0.75rem;}
         font-weight: 500;
     }
 
-    .btn > span {
+    .btn-dark > span {
         display: flex;
         font-weight: 700;
         font-size: 0.75rem;
@@ -36,16 +36,24 @@ p  { font-size: 0.75rem;}
     }
 }
 
-#navbar-btn-dark {
-    display: flex;
-    font-weight: bold;
-    font-size: 0.75rem;
-}
+
 
 #products-page {
-    background-color: $light-gray;
+    //background-color: $light-gray;
     padding: 11rem 0rem 6.5rem 0rem;
-    
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 90%;
+        }
+    }   
     .product-container {
         padding: 6rem 0rem;
 
@@ -74,5 +82,38 @@ p  { font-size: 0.75rem;}
                 margin: 1rem 0rem;
             }
         }
+    }
+}
+
+#form-partner {
+    background-image: linear-gradient(to right top, #95ade5, #9dbae8, #a8c6ea, #b7d2eb, #c8dded, #cbdff0, #cfe0f2, #d2e2f5, #ced9f8, #d3cef7, #ddc2f1, #ebb4e4);
+    padding: 2rem 2rem;
+
+    #form-container {
+        background-color: white;
+        border-radius: 5rem;
+        padding: 6rem 3rem;
+
+        h4 { margin-bottom: 2rem;}
+
+        #form-info {
+            h6 {
+                width: 70%;
+                margin-bottom: 2rem;
+            }
+        }
+
+    }
+    
+    footer {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-dark > span {
+        display: flex;
+        font-weight: 700;
+        font-size: 0.75rem;
+        margin: 0.4rem 1.6rem;
     }
 }

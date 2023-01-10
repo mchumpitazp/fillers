@@ -9,8 +9,8 @@ function Products() {
                 <h1>Our <strong>Products.</strong></h1>
 
                 <Row className='product-container'>
-                    <Col md className='p-0'>
-                        IMG
+                    <Col md className='img-container p-0'>
+                        <img src='tmp.png' alt='tmp'/>
                     </Col>
                     <Col md>
                         <article className='product-info'>
@@ -24,6 +24,8 @@ function Products() {
                             </h4>
 
                             <div>
+                                <p>Description</p>
+                                <hr/>
                                 <p>Description</p>
                                 <hr/>
                                 <p>Description</p>
@@ -56,11 +58,13 @@ function Products() {
                                 <hr/>
                                 <p>Description</p>
                                 <hr/>
+                                <p>Description</p>
+                                <hr/>
                             </div>
                         </article>
                     </Col>
-                    <Col md className='p-0'>
-                        IMG
+                    <Col md className='img-container p-0'>
+                        <img src='tmp.png' alt='tmp'/>
                     </Col>
                 </Row>
 
