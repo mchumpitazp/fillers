@@ -9,6 +9,12 @@ h5 { font-size: 1.25rem; }
 h6 { font-size: 1rem; }
 p  { font-size: 0.75rem;}
 
+// All h1 needs
+h1 {
+    margin-top: 15vw;
+    margin-bottom: 0vw;
+}
+
 .navbar {
     
     .navbar-brand {
@@ -36,11 +42,15 @@ p  { font-size: 0.75rem;}
     }
 }
 
-
+#partner-page {
+    h6 {
+        word-wrap: break-word;
+    }
+}
 
 #products-page {
     //background-color: $light-gray;
-    padding: 11rem 0rem 6.5rem 0rem;
+    padding: 0rem 0rem 6.5rem 0rem;
 
     .img-container {
         display: flex;
