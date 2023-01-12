@@ -28,23 +28,23 @@ function Header() {
                     
                     <Nav className='ms-auto' navbar>
                         <NavItem>
-                            <NavLink className="nav-link mx-2" to='/partnership' onClick={() => setNav(false)}>
+                            <NavLink className="nav-link mx-2 my-2" to='/partnership' onClick={() => setNav(false)}>
                                 PARTNERSHIP
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link mx-2" to='/products' onClick={() => setNav(false)}>
+                            <NavLink className="nav-link mx-2 my-2" to='/products' onClick={() => setNav(false)}>
                                 PRODUCTS
                             </NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink className="nav-link ms-2 me-4" to='/aboutus' onClick={() => setNav(false)}>
+                            <NavLink className="nav-link ms-2 me-4 my-2" to='/aboutus' onClick={() => setNav(false)}>
                                 ABOUT
                             </NavLink>
                         </NavItem>
                     </Nav>    
 
-                    <Button className='btn btn-dark' onClick={() => scrollToForm()}>
+                    <Button className='btn btn-dark my-2' onClick={() => scrollToForm()}>
                         <span>Get Started</span>
                     </Button>
 

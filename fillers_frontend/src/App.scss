@@ -42,6 +42,10 @@ h1 {
 }
 
 #partner-page {
+    h1 > strong{
+        display: inline-block;
+    }
+
     h5 {
         font-weight: 400;
         margin-bottom: 2rem;
