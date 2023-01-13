@@ -49,19 +49,12 @@ partnerRoute.post('/', async(req, res) => {
         message,
         datetime
     })
-    .then((rowCount, more) => {
-        res.status(200).json({
-            data: {
-                rowCount,
-                more,
-                partnerID
-            }
-        })
-    })
-    .catch(error => {
-        res.status(500).json({error});
-    })
-
+    .then(response => {
+        res.statusCode = 200;
+        res.setHeader('Content-Type', 'application/json');
+        res.json(response);
+    }, (err) => next(err))
+    .catch((err) => next(err));
 })
 
 partnerRoute.put('/:id', async(req, res) => {

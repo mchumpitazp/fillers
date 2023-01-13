@@ -26,7 +26,7 @@ function FormPartner() {
         }
 
         try {
-            fetch(baseUrl + '/partners', {
+            const res = await fetch(baseUrl + '/partners', {
                 method: 'POST',
                 body: JSON.stringify(newPartner),
                 headers: {
@@ -46,9 +46,15 @@ function FormPartner() {
             error => {
                 var errmess = new Error(error.message);
                 throw errmess;
-            })
-            .then(response => response.json())
-            .catch(error => console.log('POST Error: ', error.message));
+            });
+
+            if (res.status === 200) {
+                console.log('POST DONE')
+            }
+            else {
+                console.log('POST ERROR')
+            }
+
         } catch (error) {
             console.log('POST Error: ', error.message);
         }
