@@ -45,7 +45,7 @@ function Header() {
                     </Nav>    
 
                     <Button className='btn btn-dark my-2' onClick={() => scrollToForm()}>
-                        <span>Get Started</span>
+                        <span>Contact Us</span>
                     </Button>
 
                 </Collapse>

@@ -5,44 +5,56 @@ const addPartner = (partnerData) => {
     const {
         partnerID,
         name,
-        interest,
-        email
+        email,
+        telephone,
+        country,
+        message,
+        datetime
     } = partnerData;
 
     const query = `
-        INSERT INTO [dbo].[Partners] (PartnerID, Name, Interest, Email)
-        VALUES (@partnerID, @name, @interest, @email)
+        INSERT INTO [dbo].[Partners] (PartnerID, Name, Email, Telephone, Country, Message, DateTime)
+        VALUES (@partnerID, @name, @email, @telephone, @country, @message, @datetime)
     `;
 
     const parameters = [
         {name: 'partnerID', type: TYPES.UniqueIdentifier, value: partnerID},
         {name: 'name', type: TYPES.VarChar, value: name},
-        {name: 'interest', type: TYPES.VarChar, value: interest},
-        {name: 'email', type: TYPES.VarChar, value: email}
+        {name: 'email', type: TYPES.VarChar, value: email},
+        {name: 'telephone', type: TYPES.VarChar, value: telephone},
+        {name: 'country', type: TYPES.VarChar, value: country},
+        {name: 'message', type: TYPES.VarChar, value: message},
+        {name: 'datetime', type: TYPES.DateTime, value: datetime},
     ];
 
     return execQuery.execWriteCommand(query, parameters);
 }
 
-const updatePartner = (partnerData) => {
+const updatetimePartner = (partnerData) => {
     const {
         partnerID,
         name,
-        interest,
-        email
+        email,
+        telephone,
+        country,
+        message,
+        datetime
     } = partnerData;
 
     const query = `
         UPDATE [dbo].[Partners]
-        SET Name=@name, Interest=@interest, Email=@email
+        SET Name=@name, Email=@email, Telephone=@telephone, Country=@country, Message=@message, DateTime=@datetime
         WHERE PartnerID=@partnerID
     `;
 
     const parameters = [
         {name: 'partnerID', type: TYPES.UniqueIdentifier, value: partnerID},
         {name: 'name', type: TYPES.VarChar, value: name},
-        {name: 'interest', type: TYPES.VarChar, value: interest},
-        {name: 'email', type: TYPES.VarChar, value: email}
+        {name: 'email', type: TYPES.VarChar, value: email},
+        {name: 'telephone', type: TYPES.VarChar, value: telephone},
+        {name: 'country', type: TYPES.VarChar, value: country},
+        {name: 'message', type: TYPES.VarChar, value: message},
+        {name: 'datetime', type: TYPES.DateTime, value: datetime},
     ];
 
     return execQuery.execWriteCommand(query, parameters);
@@ -84,7 +96,7 @@ const getPartnerByID = (partnerID) => {
 
 module.exports = {
     addPartner,
-    updatePartner,
+    updatetimePartner,
     deletePartner,
     getAllPartners,
     getPartnerByID

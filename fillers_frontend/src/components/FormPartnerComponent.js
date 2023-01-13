@@ -1,8 +1,61 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
+import CountrySelect from 'react-bootstrap-country-select';
+import 'react-bootstrap-country-select/dist/react-bootstrap-country-select.css';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/bootstrap.css';
+import { baseUrl } from '../shared/baseUrl';
 
 function FormPartner() {
+    const [name, setName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [telephone, setTelephone] = React.useState('');
+    const [country, setCountry] = React.useState('');
+    const [message, setMessage] = React.useState('');
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const newPartner = {
+            name: name,
+            email: email,
+            telephone: telephone,
+            country: country.name,
+            message: message
+        }
+
+        try {
+            fetch(baseUrl + '/partners', {
+                method: 'POST',
+                body: JSON.stringify(newPartner),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response;
+                }
+                else {
+                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                    error.response = response;
+                    throw error;
+                }
+            },
+            error => {
+                var errmess = new Error(error.message);
+                throw errmess;
+            })
+            .then(response => response.json())
+            .catch(error => console.log('POST Error: ', error.message));
+        } catch (error) {
+            console.log('POST Error: ', error.message);
+        }
+
+        alert(JSON.stringify(newPartner));
+    }
+
     return(
         <section id='form-partner'>
             <Container >
@@ -17,62 +70,61 @@ function FormPartner() {
                     </Col>
 
                     <Col md id='form-form'>
-                        <Form>
-                            <Row>
-                                <Label for='firstname'>Name</Label>
-                                <Col md>
-                                    <FormGroup className='mb-0'>
-                                        <Input id='firstname' type='text'/>
-                                        <span className='tiny'>Firstname</span>
-                                    </FormGroup>
-                                </Col>
-                                <Col md>
-                                    <FormGroup>
-                                        <Input id='lastname' type='text'/>
-                                        <span className='tiny'>Lastname</span>
-                                    </FormGroup>
-                                </Col>
-                            </Row>
-                            
-                            <FormGroup tag='fieldset'>
-                                <legend className='form-label'>
-                                    Interested in:
-                                </legend>
-                                <Row>
-                                    <Col md>
-                                        <FormGroup check>
-                                            <Input name="radio1" type='radio'/>
-                                            {' '}
-                                            <Label check>Our Company</Label>
-                                        </FormGroup>
-                                    </Col>
-                                    <Col md>
-                                        <FormGroup check>
-                                            <Input name="radio1" type='radio'/>
-                                            {' '}
-                                            <Label check>Our Products</Label>
-                                        </FormGroup>
-                                    </Col>
-                                </Row>
-                                <FormGroup check>
-                                    <Input name="radio1" type='radio'/>
-                                    {' '}
-                                    <Label check>Other</Label>
-                                </FormGroup>
+                        <Form onSubmit={handleSubmit}>
+
+                            <FormGroup>
+                                <Label for='name'>Name *</Label>
+                                <Input id="name" type='text'
+                                    value={name}
+                                    onChange={e => setName(e.target.value)}/>
                             </FormGroup>
 
                             <FormGroup>
-                                <Label for="email">
-                                    Email
-                                </Label>
-                                <Input id="email"/>
+                                <Label for="email">Email *</Label>
+                                <Input id="email" type='email'
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}/>
                             </FormGroup>
 
-                            <div className='d-flex justify-content-end'>
-                                <Button className='btn btn-dark'>
-                                    <span>Submit</span>
-                                </Button>
-                            </div>
+                            <FormGroup>
+                                <Label for='telephone'>Telephone *</Label>
+                                <Row>
+                                    <Col md>
+                                        <PhoneInput id="telephone"
+                                            country={'fr'}
+                                            countryCodeEditable={false}
+                                            value={telephone}
+                                            onChange={setTelephone}/>
+                                    </Col>
+                                    <Col md></Col>
+                                </Row>
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label for='country'>Country *</Label>
+                                <CountrySelect id="country"
+                                    placeholder=''
+                                    value={country}
+                                    onChange={setCountry}/>
+                            </FormGroup>
+
+                            <FormGroup>
+                                <Label for='message'>Message</Label>
+                                <Input id="message" type='textarea' rows='4'
+                                    value={message}
+                                    onChange={e => setMessage(e.target.value)}/>
+                            </FormGroup>
+
+                            <Row>
+                                <Col md className='col-md-8 m-auto mb-3'>
+                                    <span id='required-warning'>* Required</span>
+                                </Col>
+                                <Col md className='col-md-4 m-auto'>
+                                    <Button type='submit'  className='btn btn-dark'>
+                                        <span>Submit</span>
+                                    </Button>
+                                </Col>
+                            </Row>
                             
                         </Form>
                     </Col>

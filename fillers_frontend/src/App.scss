@@ -143,16 +143,35 @@ h1 {
                 font-weight: 600;
             }
 
-            .form-check-label {
+            .form-control {
                 font-size: 0.875rem;
                 font-weight: 400;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
             }
 
-            .tiny {
+            .react-tel-input > .form-control {
+                width: 100%;
+            }
+
+            #required-warning {
                 font-size: 0.75rem;
                 font-weight: 600;
-                opacity: 0.4;
+                opacity: 0.6;
             }
+            
+            .btn-dark {
+                width: 100%;
+                
+                span {
+                    display: flex;
+                    justify-content: center;
+                    font-weight: 700;
+                    font-size: 0.75rem;
+                    margin: 0.4rem 1.6rem;
+                }
+            }
+            
         }
 
     }
@@ -161,11 +180,5 @@ h1 {
         margin-top: 3rem;
         margin-bottom: 1rem;
     }
-
-    .btn-dark > span {
-        display: flex;
-        font-weight: 700;
-        font-size: 0.75rem;
-        margin: 0.4rem 1.6rem;
-    }
+    
 }

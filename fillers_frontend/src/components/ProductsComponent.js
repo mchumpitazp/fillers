@@ -29,13 +29,13 @@ function Products() {
                                     </Row>
                                     <hr/>
                                     <Row>
-                                        <Col className='col-4'><p><strong>Volume</strong></p></Col>
+                                        <Col className='col-4'><p><strong>Packing</strong></p></Col>
                                         <Col className='col-8'><p>1 ml x 1 syringe</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
                                         <Col className='col-4'><p><strong>Needle included</strong></p></Col>
-                                        <Col className='col-8'><p>27 G x 13 mm (2 pcs)</p></Col>
+                                        <Col className='col-8'><p>27 G UTW</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
@@ -71,13 +71,13 @@ function Products() {
                                     </Row>
                                     <hr/>
                                     <Row>
-                                        <Col className='col-4'><p><strong>Volume</strong></p></Col>
+                                        <Col className='col-4'><p><strong>Packing</strong></p></Col>
                                         <Col className='col-8'><p>1 ml x 1 syringe</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
                                         <Col className='col-4'><p><strong>Needle included</strong></p></Col>
-                                        <Col className='col-8'><p>27 G x 13 mm (2 pcs)</p></Col>
+                                        <Col className='col-8'><p>27 G UTW</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
@@ -112,13 +112,13 @@ function Products() {
                                     </Row>
                                     <hr/>
                                     <Row>
-                                        <Col className='col-4'><p><strong>Volume</strong></p></Col>
+                                        <Col className='col-4'><p><strong>Packing</strong></p></Col>
                                         <Col className='col-8'><p>1 ml x 1 syringe</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
                                         <Col className='col-4'><p><strong>Needle included</strong></p></Col>
-                                        <Col className='col-8'><p>25 G x 13 mm UTW</p></Col>
+                                        <Col className='col-8'><p>27 G UTW</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
@@ -154,13 +154,13 @@ function Products() {
                                     </Row>
                                     <hr/>
                                     <Row>
-                                        <Col className='col-4'><p><strong>Volume</strong></p></Col>
+                                        <Col className='col-4'><p><strong>Packing</strong></p></Col>
                                         <Col className='col-8'><p>2 ml x 1 syringe</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>
                                         <Col className='col-4'><p><strong>Needle included</strong></p></Col>
-                                        <Col className='col-8'><p>27 G x 13 mm (2 pcs)</p></Col>
+                                        <Col className='col-8'><p>31 G UTW</p></Col>
                                     </Row>
                                     <hr/>
                                     <Row>

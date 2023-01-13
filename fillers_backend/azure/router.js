@@ -30,18 +30,24 @@ partnerRoute.get('/:id', async(req, res) => {
 
 partnerRoute.post('/', async(req, res) => {
     const partnerID = uuidv4();
+    const datetime = new Date();
 
     const {
         name,
-        interest,
-        email
+        email,
+        telephone,
+        country,
+        message,
     } = req.body;
 
     partnerModel.addPartner({
         partnerID,
         name,
-        interest,
-        email
+        email,
+        telephone,
+        country,
+        message,
+        datetime
     })
     .then((rowCount, more) => {
         res.status(200).json({
@@ -60,18 +66,24 @@ partnerRoute.post('/', async(req, res) => {
 
 partnerRoute.put('/:id', async(req, res) => {
     const {id: partnerID} = req.params;
+    const datetime = new Date();
 
     const {
         name,
-        interest,
-        email
+        email,
+        telephone,
+        country,
+        message,
     } = req.body;
 
     partnerModel.updatePartner({
         partnerID,
         name,
-        interest,
-        email
+        email,
+        telephone,
+        country,
+        message,
+        datetime
     })
     .then((rowCount, more) => {
         res.status(200).json({
