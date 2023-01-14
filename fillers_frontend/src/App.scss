@@ -150,6 +150,11 @@ h1 {
                 padding-bottom: 0.5rem;
             }
 
+            .form-control.is-invalid {
+                border-color: #ced4da;
+                background-image: none;
+            }
+
             .react-tel-input > .form-control {
                 width: 100%;
             }
@@ -180,5 +185,5 @@ h1 {
         margin-top: 3rem;
         margin-bottom: 1rem;
     }
-    
+
 }
