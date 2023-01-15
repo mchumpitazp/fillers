@@ -184,6 +184,23 @@ h1 {
     footer {
         margin-top: 3rem;
         margin-bottom: 1rem;
+
+        p { 
+            font-size: 0.75rem;
+            span { display: inline-block; }
+        }
+
+        button {
+            font-size: 1.5rem;
+            background-color: rgba($color: #ffffff, $alpha: 0.3);
+            color: black;
+            border: none;
+            border-radius: 50%;
+        }
+
+        button:hover{
+            background-color: rgba($color: #ffffff, $alpha: 0.6);
+        }
     }
 
 }

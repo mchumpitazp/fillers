@@ -259,7 +259,23 @@ function FormPartner() {
 
                 <Row>
                     <footer>
-                        Fillers 2023
+                        <Row>
+                            <Col className='d-flex align-items-center'>
+                                <p className='m-0'>&#169; 2023 <span>All rights reserved.</span></p>
+                            </Col>
+                            <Col className='d-flex justify-content-end'>
+                                <Button >
+                                    <i class="bi bi-whatsapp"></i>
+                                </Button>
+                                <Button className='btn mx-4'>
+                                    <i class="bi bi-facebook"></i>
+                                </Button>
+                                <Button>
+                                    <i class="bi bi-instagram"></i>
+                                </Button>
+                            </Col>
+                        </Row>
+                        
                     </footer>
                 </Row>
             </Container>
