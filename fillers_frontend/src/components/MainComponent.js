@@ -12,10 +12,6 @@ import FormPartner from './FormPartnerComponent';
 
 class Main extends React.Component {
 
-    constructor() {
-        super();
-    }
-
     componentDidMount() {}
 
     render() {
@@ -23,10 +19,11 @@ class Main extends React.Component {
             <React.Fragment>
                 <Header />
                 <Routes>
-                    <Route index element={<Partner />} />
-                    <Route exact path='/partnership' element={<Partner />} />
+                    <Route index element={<Products />} />
+                    {/* <Route exact path='/partnership' element={<Partner />} />
                     <Route exact path='/products' element={<Products />} />
-                    <Route exact path='/aboutus' element={<About />} />
+                    <Route exact path='/aboutus' element={<About />} /> */}
+                    <Route exact path='/products' element={<Products />}/>
                 </Routes>
                 <FormPartner />
             </React.Fragment>

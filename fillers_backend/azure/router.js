@@ -28,7 +28,7 @@ partnerRoute.get('/:id', async(req, res) => {
     })
 })
 
-partnerRoute.post('/', async(req, res) => {
+partnerRoute.post('/', async(req, res, next) => {
     const partnerID = uuidv4();
     const datetime = new Date();
 

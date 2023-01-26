@@ -29,7 +29,7 @@ function FormPartner() {
             handleValidSubmit();
             setValidation(false);
         }
-    }, [validation]);
+    }, [validation]); // eslint-disable-line react-hooks/exhaustive-deps
     
     React.useEffect(() => {
         let timeout;
@@ -55,7 +55,7 @@ function FormPartner() {
         setMessage('');
     };
 
-    const handleValidSubmit = async () => {
+    const handleValidSubmit = () => {
         const newPartner = {
             name: name,
             email: email,
@@ -64,32 +64,17 @@ function FormPartner() {
             message: message
         };
 
-        try {
-            const res = await fetch(baseUrl + '/partners', {
-                method: 'POST',
-                body: JSON.stringify(newPartner),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response;
-                }
-                else {
-                    var error = new Error('Error ' + response.status + ': ' + response.statusText);
-                    error.response = response;
-                    throw error;
-                }
-            },
-            error => {
-                var errmess = new Error(error.message);
-                throw errmess;
-            });
-
+        return fetch(baseUrl + '/partners', {
+            method: 'POST',
+            body: JSON.stringify(newPartner),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
             setSpinnerOpen(false);
 
-            if (res.status === 200) {
+            if (response.status === 200) {
                 console.log('POST DONE');
                 clearInputs();
                 setSuccess(true);
@@ -97,12 +82,20 @@ function FormPartner() {
             else {
                 console.log('POST ERROR');
                 setFailed(true);
+                var error = new Error('Error ' + response.status + ': ' + response.statusText);
+                error.response = response;
+                throw error;
             }
-
-        } catch (error) {
+        },
+        error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+        })
+        .catch(error => {
             setSpinnerOpen(false);
             console.log('POST Error: ', error.message);
-        }
+        })
+
     };
  
     const validateForm = () => {
@@ -155,8 +148,7 @@ function FormPartner() {
                     <h4>Become <strong>a partner</strong></h4>
                     
                     <Col md id='form-info'>
-                        <p>Our team will reach you as soon as possible so all your questions/topics/recommendations will be replied. We are excited to receive your info. (e.g.)</p>
-                        <p>Fillers team gives you a warm welcome.</p>
+                        <p>Fillers<span>+</span>&nbsp;&nbsp;&nbsp;team gives you a warm welcome. Our team will reach you as soon as possible.</p>
                     </Col>
 
                     <Col md id='form-form'>
@@ -263,7 +255,7 @@ function FormPartner() {
                             <Col className='d-flex align-items-center'>
                                 <p className='m-0'>&#169; 2023 <span>All rights reserved.</span></p>
                             </Col>
-                            <Col className='d-flex justify-content-end'>
+                            {/* <Col className='d-flex justify-content-end'>
                                 <Button >
                                     <i class="bi bi-whatsapp"></i>
                                 </Button>
@@ -273,7 +265,7 @@ function FormPartner() {
                                 <Button>
                                     <i class="bi bi-instagram"></i>
                                 </Button>
-                            </Col>
+                            </Col> */}
                         </Row>
                         
                     </footer>

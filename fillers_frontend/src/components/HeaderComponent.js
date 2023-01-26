@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavbarBrand, NavbarToggler, Nav, Collapse, NavItem, Button, Container } from 'reactstrap';
+import { Navbar, NavbarBrand, NavbarToggler, Nav, Collapse, NavItem, Button, Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
 function Header() {
@@ -14,8 +14,18 @@ function Header() {
         <Container>
 
             <Navbar expand='md' className='my-3'>
-
-                <NavbarBrand href='/'>
+                <NavbarBrand>
+                    <span id='brand'>
+                        Fillers
+                        <span id='plus'>+</span>
+                    </span>
+                </NavbarBrand>
+                
+                <Button className='btn btn-dark my-2' onClick={() => scrollToForm()}>
+                    <span>Contact Us</span>
+                </Button>
+                
+                {/* <NavbarBrand href='/'>
                     <span id='brand'>
                         Fillers
                         <span id='plus'>+</span>
@@ -48,7 +58,7 @@ function Header() {
                         <span>Contact Us</span>
                     </Button>
 
-                </Collapse>
+                </Collapse> */}
 
             </Navbar>
 
