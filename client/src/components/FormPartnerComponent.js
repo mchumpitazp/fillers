@@ -136,7 +136,7 @@ function FormPartner() {
             setSpinnerOpen(true);
             setValidation(true);
         } else {
-            setValidation(false)
+            setValidation(false);
         }
     }
 

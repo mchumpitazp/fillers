@@ -1,6 +1,5 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import { baseUrl } from '../shared/baseUrl';
 
 function Products() {
     return(
@@ -47,7 +46,7 @@ function Products() {
                             </article>
                     </Col>
                     <Col md className='order-md-1 img-container p-0'>
-                        <img src={baseUrl + '/images/shape.jpg'} alt='ha_shape'/>
+                        <img src='/images/shape.jpg' alt='ha_shape'/>
                     </Col>
                     
                 </Row>
@@ -89,7 +88,7 @@ function Products() {
                             </article>
                         </Col>
                     <Col md className='img-container p-0'>
-                        <img src={baseUrl + '/images/deep.jpg'} alt='ha_deep'/>
+                        <img src='/images/deep.jpg' alt='ha_deep'/>
                     </Col>
                 </Row>
                 
@@ -130,7 +129,7 @@ function Products() {
                             </article>
                     </Col>
                     <Col md className='order-md-1 img-container p-0'>
-                        <img src={baseUrl + '/images/fine.jpg'} alt='ha_fine'/>
+                        <img src='/images/fine.jpg' alt='ha_fine'/>
                     </Col>
                     
                 </Row>
@@ -172,7 +171,7 @@ function Products() {
                             </article>
                         </Col>
                     <Col md className='img-container p-0'>
-                        <img src={baseUrl + '/images/shine.jpg'} alt='ha_shine'/>
+                        <img src='/images/shine.jpg' alt='ha_shine'/>
                     </Col>
                 </Row>
             </Container>
