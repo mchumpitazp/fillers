@@ -7,6 +7,7 @@ var logger = require('morgan');
 var helmet = require('helmet');
 
 var partnerRouter = require('./azure/router');
+var app = express();
 
 // connect to mongodb and port
 const PORT = process.env.PORT || 3001;
@@ -16,7 +17,6 @@ app.listen(PORT, (_) => {
 });
 
 // view engine setup
-var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
