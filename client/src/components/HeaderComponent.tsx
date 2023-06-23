@@ -6,7 +6,7 @@ function Header() {
     const [navState, setNav] = React.useState(false);
 
     const scrollToForm = async () => {
-        document.querySelector('#form-partner').scrollIntoView({behavior: 'smooth'});        
+        document.querySelector('#form-partner')!.scrollIntoView({behavior: 'smooth'});        
         setTimeout(() => {setNav(false)}, 1000);
     }
     

@@ -11,7 +11,7 @@ function FormPartner() {
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [telephone, setTelephone] = React.useState('');
-    const [country, setCountry] = React.useState();
+    const [country, setCountry] = React.useState<any>();
     const [message, setMessage] = React.useState('');
 
     const [nameVal, setNameVal] = React.useState(true);
@@ -32,7 +32,7 @@ function FormPartner() {
     }, [validation]); // eslint-disable-line react-hooks/exhaustive-deps
     
     React.useEffect(() => {
-        let timeout;
+        let timeout: NodeJS.Timeout;
         if (success) {
             timeout = setTimeout(() => { setSuccess(false) }, 2000);
         }
@@ -40,7 +40,7 @@ function FormPartner() {
     }, [success]);
 
     React.useEffect(() => {
-        let timeout;
+        let timeout: NodeJS.Timeout;
         if (failed) {
             timeout = setTimeout(() => { setFailed(false) }, 2000);
         }
@@ -83,7 +83,7 @@ function FormPartner() {
                 console.log('POST ERROR');
                 setFailed(true);
                 var error = new Error('Error ' + response.status + ': ' + response.statusText);
-                error.response = response;
+                // error.response = response;
                 throw error;
             }
         },
@@ -126,10 +126,10 @@ function FormPartner() {
             setCountryVal(true);
         } else { setCountryVal(false); }
 
-        return (nameTmp & emailTmp & telephoneTmp & countryTmp);
+        return (nameTmp && emailTmp && telephoneTmp && countryTmp);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.MouseEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (validateForm()) {
@@ -158,7 +158,7 @@ function FormPartner() {
                                 <Label for='name'>Name *</Label> 
                                 <Input id="name" type='text' required
                                     value={name}
-                                    onChange={e => setName(e.target.value)}
+                                    onChange={(e: React.MouseEvent<HTMLInputElement>) => setName((e.target as HTMLInputElement).value)}
                                     onClick={() => setNameVal(true)}
                                     invalid={nameVal===false}/>
                                 <FormFeedback>
@@ -170,7 +170,7 @@ function FormPartner() {
                                 <Label for="email">Email *</Label>
                                 <Input id="email" type='email' required
                                     value={email}
-                                    onChange={e => setEmail(e.target.value)}
+                                    onChange={(e: React.MouseEvent<HTMLInputElement>) => setEmail((e.target as HTMLInputElement).value)}
                                     onClick={() => setEmailVal(true)}
                                     invalid={emailVal===false}/>
                                 <FormFeedback>
@@ -202,7 +202,9 @@ function FormPartner() {
                                 <CountrySelect
                                     placeholder=''
                                     value={country}
-                                    onChange={setCountry} />
+                                    onChange={setCountry} onTextChange={function (text: string, changeEvent: React.ChangeEvent<Element>): void {
+                                        throw new Error('Function not implemented.');
+                                    } } />
                                 <Input hidden invalid={countryVal===false}/>
                                 <FormFeedback>
                                     Please choose a country
@@ -213,7 +215,7 @@ function FormPartner() {
                                 <Label for='message'>Message</Label>
                                 <Input id="message" type='textarea' rows='4'
                                     value={message}
-                                    onChange={e => setMessage(e.target.value)}/>
+                                    onChange={(e: React.MouseEvent<HTMLInputElement>) => setMessage((e.target as HTMLInputElement).value)} />
                             </FormGroup>
 
                             <Alert isOpen={success} className='my-3 py-2'>
